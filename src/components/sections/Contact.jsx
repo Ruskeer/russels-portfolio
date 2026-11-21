@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Mail, MapPin, Send, MessageSquare, Icon } from 'lucide-react';
+import { Mail, MapPin, Send, MessageSquare } from 'lucide-react';
 import { FaFacebook, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { PERSONAL_INFO, SOCIAL_LINKS } from '../../utils/constants';
 import FadeIn from '../animations/FadeIn';
@@ -22,22 +22,36 @@ const Contact = () => {
 
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        
+
         if(!formData.name || !formData.email || !formData.message) {
             setStatus({type: 'error', message: 'Please fill in all fields'});
             return;
         }
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(formData.email)) {
+        if (!emailRegex.test(formData.email)) {
             setStatus({ type: 'error', message: 'Please enter a valid email' });
             return;
         }
 
-        setStatus({type: 'success', message: 'Message sent successfully! I\'ll get back to you soon as possible.'})
-        setFormData({name: '', email: '', message: ''})
+        try {
+            const response = await fetch('https://formspree.io/f/xkjrvkjw', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                setStatus({type: 'success', message: 'Message sent successfully! I\'ll get back to you as soon as possible.'});
+                setFormData({name: '', email: '', message: ''});
+            } else {
+                setStatus({type: 'error', message: 'Something went wrong. Please email me directly.'});
+            }
+        } catch (error) {
+            setStatus({type: 'error', message: 'Something went wrong. Please email me directly.'});
+        }
 
         setTimeout(() => setStatus({type: '', message: ''}), 5000);
     };
@@ -114,7 +128,7 @@ const Contact = () => {
                                     value={formData.message}
                                     onChange={handleChange}
                                     rows={5}
-                                    placeholder='Tell me about your project'
+                                    placeholder='How can I help you?'
                                 />
                             </div>
 

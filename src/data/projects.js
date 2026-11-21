@@ -20,7 +20,7 @@ export const projects = [
     category: 'Web Apps',
     technologies: ['HTML', 'CSS', 'JavaScript'],
     metrics: 'Tracks speed and accuracy',
-    demoUrl: 'https://your-demo-link.com',
+    demoUrl: 'https://ruskeer.github.io/WPM-TESTER/',
     githubUrl: 'https://github.com/Ruskeer/WPM-TESTER',
   },
   {
@@ -32,7 +32,7 @@ export const projects = [
     category: 'Web Apps',
     technologies: ['HTML', 'CSS', 'JavaScript', 'API'],
     metrics: 'Powered by a public API',
-    demoUrl: 'https://your-demo-link.com',
+    demoUrl: 'https://ruskeer.github.io/FINDER-OF-RECIPE-WEB/',
     githubUrl: 'https://github.com/Ruskeer/FINDER-OF-RECIPE-WEB',
   },
   {
@@ -44,7 +44,7 @@ export const projects = [
     category: 'Web Apps',
     technologies: ['HTML', 'CSS', 'JavaScript', 'API'],
     metrics: 'Live weather data',
-    demoUrl: 'https://your-demo-link.com',
+    demoUrl: 'https://ruskeer.github.io/Weather-Widget-Web/',
     githubUrl: 'https://github.com/Ruskeer/Weather-Widget-Web',
   },
   {
@@ -56,7 +56,7 @@ export const projects = [
     category: 'Tools',
     technologies: ['HTML', 'CSS', 'JavaScript'],
     metrics: 'Add, complete, delete tasks',
-    demoUrl: 'https://your-demo-link.com',
+    demoUrl: 'https://ruskeer.github.io/TO-DO-TASK-LIST/',
     githubUrl: 'https://github.com/Ruskeer/TO-DO-TASK-LIST',
   },
   {
@@ -92,7 +92,7 @@ export const projects = [
     category: 'Web Apps',
     technologies: ['HTML', 'CSS', 'JavaScript'],
     metrics: 'Play against the computer',
-    demoUrl: 'https://your-demo-link.com',
+    demoUrl: 'https://ruskeer.github.io/ROCK-PAPER-SCISSORS/',
     githubUrl: 'https://github.com/Ruskeer/ROCK-PAPER-SCISSORS',
   },
   {

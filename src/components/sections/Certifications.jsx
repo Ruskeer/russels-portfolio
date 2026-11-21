@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { Award, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Award, ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { certifications } from '../../data/certification';
 import FadeIn from '../animations/FadeIn';
 
@@ -7,6 +7,13 @@ const Certifications = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollContainerRef = useRef(null);
+  const [selectedCert, setSelectedCert] = useState(null);
+  const [zoomed, setZoomed] = useState(false);
+
+  const closeViewer = () => {
+    setSelectedCert(null);
+    setZoomed(false);
+  };
 
   // slide the row so card number "index" is in view
   const scrollToIndex = (index) => {
@@ -83,7 +90,7 @@ const Certifications = () => {
                     <div className='grid md:grid-cols-2 bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300'>
 
                       {/* Certificate image */}
-                      <div className='bg-black/40 p-4 flex items-center justify-center'>
+                      <div className='bg-black/40 p-4 flex items-center justify-center cursor-zoom-in' onClick={() => setSelectedCert(cert)}>
                         <img
                           src={cert.image}
                           alt={cert.title}
@@ -173,6 +180,38 @@ const Certifications = () => {
         </FadeIn>
 
       </div>
+
+      {/* Certificate viewer - when user clicks the certificate card */}
+      {selectedCert && (
+        <div
+          className='fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-md p-4'
+          onClick={closeViewer}
+        >
+          <button
+            onClick={closeViewer}
+            className='absolute top-4 right-4 p-2 bg-white/10 border border-white/20 rounded-full hover:bg-white/20 z-10'
+            aria-label='Close'
+          >
+            <X className='w-6 h-6 text-white'/>
+          </button>
+
+          <div
+            className='w-full max-w-5xl max-h-[90vh] overflow-auto'
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={selectedCert.image}
+              alt={selectedCert.title}
+              onClick={() => setZoomed(!zoomed)}
+              className={`rounded-lg transition-all duration-300 ${
+                zoomed
+                  ? 'w-[200%] max-w-none cursor-zoom-out'
+                  : 'w-full max-h-[85vh] object-contain cursor-zoom-in'
+              }`}
+            />
+          </div>
+        </div>
+      )}
     </section>
   )
 }
