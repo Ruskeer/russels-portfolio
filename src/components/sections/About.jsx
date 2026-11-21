@@ -178,7 +178,7 @@ const About = () => {
                 Skills & Expertise
               </h3>
               <p className='text-sm text-white/60'>
-                The tools and skills I use to build websites and support teams.
+                The tools and skills I use to build websites and support me in my VA activities.
               </p>
             </div>
             

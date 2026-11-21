@@ -55,17 +55,5 @@ export const certifications = [
     image: 'Not Yet Provided By My University',
     verifyUrl: '',
   },
-  {
-    id: 8,
-    title: 'Your Project Name',
-    description: 'One short line: the Excel tracker and the proposal for it.',
-    image: '/images/projects/va1.png',
-    category: 'Virtual Assistant',
-    technologies: ['Excel', 'PowerPoint'],
-    metrics: 'Tracker + proposal',
-    files: [
-      { label: 'Excel Tracker', url: '/files/tracker.xlsx' },
-      { label: 'Proposal (PowerPoint)', url: '/files/proposal.pptx' },
-    ],
-  },
+  
 ];
