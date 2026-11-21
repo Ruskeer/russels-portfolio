@@ -15,7 +15,7 @@ export const PERSONAL_INFO = {
 
 export const SOCIAL_LINKS = {
   github: 'https://github.com/Ruskeer',
-  linkedin: '',
+  linkedin: 'https://www.linkedin.com/in/russel-tagoon-bb1a43204/',
 };
 
 export const STATS = [
