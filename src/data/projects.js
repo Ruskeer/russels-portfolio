@@ -68,7 +68,7 @@ export const projects = [
     category: 'Tools',
     technologies: ['HTML', 'CSS', 'JavaScript'],
     metrics: 'Customizable passwords',
-    demoUrl: 'https://your-demo-link.com',
+    demoUrl: 'https://ruskeer.github.io/Password-Generator_M/',
     githubUrl: 'https://github.com/Ruskeer/Password-Generator_M',
   },
    {
@@ -80,7 +80,7 @@ export const projects = [
     category: 'Tools',
     technologies: ['HTML', 'CSS', 'JavaScript'],
     metrics: 'Live countdown timer',
-    demoUrl: 'https://your-demo-link.com',
+    demoUrl: 'https://ruskeer.github.io/My-Countdown/',
     githubUrl: 'https://github.com/Ruskeer/My-Countdown',
   },
   {
